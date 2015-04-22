@@ -15,4 +15,9 @@ module.exports = function (app) {
 
   app.get('/:code', linksController.navToLink);
 
+
+
+// app.post('/signin', userController.signin);
+//   app.post('/signup', userController.signup);
+//   app.get('/signedin', userController.checkAuth);
 };
