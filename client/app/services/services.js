@@ -12,8 +12,34 @@ angular.module('shortly.services', [])
     });
   };
 
+  var grabLink = function(code) {
+    return $http({
+      method : 'JSONP',
+      url    : '/api/links/' + code
+    })
+    .then(function (response) {
+      return response.data;
+    });
+  };
+
+  //post version
+  //takes a single argument, the link to post
+  var postLink = function(newLink) {
+    return $http({
+      method: 'POST',
+      url: '/api/links',
+      data : newLink
+    })
+    .then(function(response){
+
+    });
+
+  };
+
   return {
-    retrieveLinks : retrieveLinks
+    retrieveLinks : retrieveLinks,
+    postLink : postLink,
+    grabLink : grabLink
   };
 })
 .factory('Auth', function ($http, $location, $window) {

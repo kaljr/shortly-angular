@@ -1,3 +1,6 @@
 <div id='container'>
   <!-- Your html here -->
+  <ul>
+    <li ng-repeat="link in data.links" ng-click="goThere(link.code)">{{ link.base_url + '/api/links/' + link.code }}</li>
+  </ul>
 </div>

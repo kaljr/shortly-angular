@@ -2,9 +2,16 @@ angular.module('shortly.shorten', [])
 
 .controller('ShortenController', function ($scope, $location, Links) {
   // Your code here
-  $scope.link = {};
+  $scope.link = { url : ''};
+  $scope.newLink = ''
 
   $scope.addLink = function() {
-    console.log('woo addLink stub!');
+    $scope.link.url = $scope.newLink;
+    $scope.newLink = '';
+    Links.postLink($scope.link).then(function(token) {
+
+    });
   };
+
+
 });

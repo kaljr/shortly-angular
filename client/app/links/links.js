@@ -9,5 +9,11 @@ angular.module('shortly.links', [])
     });
   };
 
+  $scope.goThere = function(code) {
+    Links.grabLink(code).then(function() {
+      //.... something
+    });
+  };
+
   $scope.getLinks();
 });
