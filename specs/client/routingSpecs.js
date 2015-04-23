@@ -13,7 +13,6 @@ describe('Routing', function () {
   });
 
   it('Should have /signin route, template, and controller', function () {
-    console.log('signin', $route.routes['/signin']);
 
     expect($route.routes['/signin']).to.be.ok();
     expect($route.routes['/signin'].controller).to.be('AuthController');
@@ -21,7 +20,7 @@ describe('Routing', function () {
   });
 
   it('Should have /links route, template, and controller', function () {
-    console.log('linking', $route.routes['/links']);
+
     expect($route.routes['/links']).to.be.ok();
     expect($route.routes['/links'].controller).to.be('LinksController');
     expect($route.routes['/links'].templateUrl).to.be('app/links/links.html');

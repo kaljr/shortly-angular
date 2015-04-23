@@ -146,3 +146,20 @@ input[type=url]:focus {
   clear: both;
 }
 
+nav ul li {
+  display: inline;
+  padding: 5px;
+  background: #ccc;
+  font-size: 26px;
+}
+nav ul li:hover {
+  background: #aaa;
+}
+
+.ng-invalid input {
+  background: #990000;
+}
+
+.ng-valid input {
+  background: #0B0;
+}

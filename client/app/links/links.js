@@ -1,6 +1,6 @@
 angular.module('shortly.links', [])
 
-.controller('LinksController', function ($scope, Links) {
+.controller('LinksController', function ($scope, Links, $filter) {
   // Your code here
   $scope.data = {};
   $scope.getLinks = function () {
@@ -10,9 +10,11 @@ angular.module('shortly.links', [])
   };
 
   $scope.goThere = function(code) {
-    Links.grabLink(code).then(function() {
-      //.... something
-    });
+
+    window.location.href = "http://localhost:3000/api/links/" + code;
+    // Links.grabLink(code).then(function() {
+    //   //.... something
+    // });
   };
 
   $scope.getLinks();
