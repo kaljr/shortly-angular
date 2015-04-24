@@ -12,9 +12,6 @@ angular.module('shortly.links', [])
   $scope.goThere = function(code) {
 
     window.location.href = "http://localhost:3000/api/links/" + code;
-    // Links.grabLink(code).then(function() {
-    //   //.... something
-    // });
   };
 
   $scope.getLinks();

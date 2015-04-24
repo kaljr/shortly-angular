@@ -61,4 +61,24 @@ angular.module('shortly', [
       $location.path('/signin');
     }
   });
+})
+.directive('urlvalidator', function() {
+  return {
+    require: 'ngModel',
+    link: function(scope, elm, attrs, ctrl) {
+
+      var validate = function() {
+        var regex = new RegExp('(https://|http://|)[a-zA-Z0-9\-\.]+\.(com|org|net|mil|edu|COM|ORG|NET|MIL|EDU|uk).{0,1000}');
+          if(regex.test(scope.newLink)) {
+            ctrl.$setValidity('urlvalidator',true);
+          } else {
+            ctrl.$setValidity('urlvalidator',false);
+          }
+      };
+
+      scope.$watch( function() {
+              return ctrl.$viewValue;
+            }, validate);
+    }
+  };
 });
