@@ -1,6 +1,7 @@
 <div id='container'>
   <!-- Your html here -->
+  <input ng-model='query'></input>
   <ul>
-    <li ng-repeat="link in data.links | orderBy: '-visits' " ng-click="goThere(link.code)">{{ link.title + " " + link.base_url + '/api/links/' + link.code }} - {{ link.visits }}</li>
+    <li ng-repeat="link in data.links | orderBy: '-visits' | filter: query " ng-click="goThere(link.code)">{{ link.title + " " + link.base_url + '/api/links/' + link.code }} - {{ link.visits }}</li>
   </ul>
 </div>
